@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shree Krishna Sweets - Authentic Taste of Tradition. Fresh Indian sweets made with pure ghee and traditional recipes in Karimpur, West Bengal.">
+    <meta name="keywords" content="Indian sweets, mithai, Gulab Jamun, Rasgulla, Kaju Katli, Karimpur, West Bengal, traditional sweets">
+    <meta name="author" content="Shree Krishna Sweets">
+    <meta property="og:title" content="Shree Krishna Sweets - Authentic Taste of Tradition">
+    <meta property="og:description" content="Fresh Indian sweets made with love and pure ingredients. Order now from Karimpur, West Bengal.">
+    <meta property="og:type" content="website">
+    <title>Shree Krishna Sweets | Authentic Taste of Tradition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-maroon: #800020;
+            --dark-maroon: #5c0018;
+            --light-maroon: #a33c4a;
+            --primary-gold: #FFD700;
+            --dark-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --cream: #FFF8E7;
+            --white: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-light: #666666;
+            --shadow: 0 4px 20px rgba(128, 0, 32, 0.15);
+            --shadow-hover: 0 8px 30px rgba(128, 0, 32, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-maroon), var(--dark-maroon));
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-gold);
+            border-radius: 3px;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--primary-gold);
+            color: var(--primary-maroon);
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-maroon), var(--dark-maroon));
+            color: var(--primary-gold);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--primary-gold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--primary-maroon);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary-gold);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-maroon);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title .underline {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--dark-gold));
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--white), var(--cream));
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-maroon);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .features {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--cream);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            color: var(--primary-maroon);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .feature svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-gold);
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--cream);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--primary-maroon);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary-maroon);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            background: var(--cream);
+            padding: 0.5rem;
+            border-radius: 25px;
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: var(--primary-maroon);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .qty-btn:hover {
+            background: var(--dark-maroon);
+            transform: scale(1.1);
+        }
+
+        .qty-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-maroon);
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            background: linear-gradient(135deg, var(--primary-maroon), var(--dark-maroon));
+            color: var(--primary-gold);
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart:hover {
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--primary-maroon);
+        }
+
+        .add-to-cart svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Cart Section */
+        .cart-section {
+            background: linear-gradient(135deg, var(--white), var(--cream));
+            position: relative;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .cart-empty svg {
+            width: 80px;
+            height: 80px;
+            fill: var(--light-gold);
+            margin-bottom: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--cream);
+            transition: background 0.3s ease;
+        }
+
+        .cart-item:hover {
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-details h4 {
+            color: var(--primary-maroon);
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-details p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .cart-item-total {
+            font-weight: 700;
+            color: var(--primary-maroon);
+            font-size: 1.1rem;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .remove-item svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .cart-summary {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--primary-gold);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-total h3 {
+            font-size: 1.5rem;
+            color: var(--primary-maroon);
+        }
+
+        .cart-total .amount {
+            font-size: 2rem;
+            color: var(--primary-maroon);
+            font-weight: 700;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-maroon), var(--dark-maroon));
+            color: var(--white);
+        }
+
+        .contact .section-title h2 {
+            color: var(--primary-gold);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-gold);
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item div h4 {
+            color: var(--primary-gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item div p, .contact-item div a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item div a:hover {
+            color: var(--primary-gold);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .map-container {
+            background: var(--cream);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-maroon);
+        }
+
+        .map-placeholder svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-maroon);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            color: var(--light-gold);
+            font-size: 0.9rem;
+        }
+
+        footer .business-tag {
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-8px);
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, var(--primary-maroon), var(--dark-maroon));
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .cart-container {
+                padding: 1rem;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .cart-item-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 5.5 5 5 9c-.3 2.5.5 5 2.5 7 1.5 1.5 2.5 3 2.5 5h4c0-2 1-3.5 2.5-5 2-2 2.8-4.5 2.5-7-.5-4-3.5-7-7-7zm0 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/></svg>
+                Shree Krishna Sweets
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="cart-icon" onclick="document.getElementById('cart').scrollIntoView({behavior: 'smooth'})">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <span class="cart-count" id="cartCount" style="display: none;">0</span>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Shree Krishna Sweets</h1>
+            <p class="tagline">Authentic Taste of Tradition</p>
+            <a href="#products" class="btn-primary">Order Now</a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>About Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80" alt="Traditional Indian Sweets Making">
+                </div>
+                <div class="about-text reveal">
+                    <h3>Preserving the Art of Indian Mithai</h3>
+                    <p>For generations, Shree Krishna Sweets has been the heart of Karimpur, West Bengal, serving the most authentic Indian sweets crafted with love and tradition. Our expert halwais (sweet makers) have mastered recipes passed down through centuries, ensuring every bite carries the essence of Indian culinary heritage.</p>
+                    <p>We believe in purity above all. Every sweet is prepared using fresh, handpicked ingredients — from the finest khoya and pure desi ghee to premium dry fruits and fragrant cardamom. Our commitment to hygiene is unwavering, with our kitchens maintaining the highest standards of cleanliness. The result? That unmistakable homemade taste that transports you back to your grandmother's kitchen, where love was the secret ingredient in every preparation.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            Fresh Ingredients
+                        </div>
+                        <div class="feature">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            Pure Ghee
+                        </div>
+                        <div class="feature">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            Premium Hygiene
+                        </div>
+                        <div class="feature">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            Homemade Taste
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Specialties</h2>
+                <div class="underline"></div>
+                <p style="color: var(--text-light); margin-top: 1rem;">Premium Indian Sweets | Fresh Daily | Made with Love</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be inserted by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section" id="cart">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Your Cart</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="cart-container reveal">
+                <div id="cartContent">
+                    <div class="cart-empty">
+                        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some delicious sweets to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Contact Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info reveal">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/919876543210">+91 98765 43210</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Shree Krishna Sweets<br>Main Bazaar Road<br>Karimpur, West Bengal<br>India - 741152</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <ul class="hours-list">
+                                <li><span>Monday - Saturday</span><span>8:00 AM - 9:00 PM</span></li>
+                                <li><span>Sunday</span><span>9:00 AM - 8:00 PM</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 1rem;">Find Us</h3>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <p>Map: Karimpur, West Bengal, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Shree Krishna Sweets. All Rights Reserved.</p>
+        <p class="business-tag">Designed for Indian Small Business</p>
+    </footer>
+
+    <script>
+        // Products data
+        const products = [
+            { id: 1, name: "Gulab Jamun", price: 40, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Deep-fried milk dumplings soaked in fragrant sugar syrup" },
+            { id: 2, name: "Kaju Katli", price: 120, image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=600&q=80", description: "Rich cashew fudge with silver leaf, a royal delicacy" },
+            { id: 3, name: "Motichoor Laddu", price: 50, image: "https://images.unsplash.com/photo-1596560548464-f010549b84d7?w=600&q=80", description: "Tiny gram flour pearls bound with pure ghee and sugar" },
+            { id: 4, name: "Rasgulla", price: 35, image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", description: "Soft cottage cheese balls in light sugar syrup" },
+            { id: 5, name: "Soan Papdi", price: 80, image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd1?w=600&q=80", description: "Flaky, crispy sweet made with gram flour and ghee" },
+            { id: 6, name: "Milk Barfi", price: 60, image: "https://images.unsplash.com/photo-1601305722878-9391d3c7b0ae?w=600&q=80", description: "Traditional milk fudge cooked to perfection" },
+            { id: 7, name: "Doodh Peda", price: 55, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Rich milk-based sweet with cardamom flavor" },
+            { id: 8, name: "Crispy Jalebi", price: 30, image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80", description: "Golden spirals soaked in saffron-infused sugar syrup" },
+            { id: 9, name: "Mysore Pak", price: 90, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Melt-in-mouth classic from Karnataka with ghee" },
+            { id: 10, name: "Cham Cham", price: 45, image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", description: "Oval-shaped Bengali sweet coated with coconut flakes" },
+            { id: 11, name: "Rajasthani Ghevar", price: 150, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Disc-shaped sweet made during festivals, rich in ghee" },
+            { id: 12, name: "Malai Peda", price: 65, image: "https://images.unsplash.com/photo-1601305722878-9391d3c7b0ae?w=600&q=80", description: "Creamy milk sweet with rich malai topping" },
+            { id: 13, name: "Balu Shahi", price: 50, image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd1?w=600&q=80", description: "Flaky fried pastry soaked in sugar syrup" },
+            { id: 14, name: "Kalakand", price: 75, image: "https://images.unsplash.com/photo-1601305722878-9391d3c7b0ae?w=600&q=80", description: "Grainy sweet made with paneer and condensed milk" },
+            { id: 15, name: "Mohan Thal", price: 100, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Rich barfi made with gram flour and dry fruits" },
+            { id: 16, name: "Sandesh", price: 55, image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", description: "Classic Bengali sweet made from fresh chhena" },
+            { id: 17, name: "Besan Laddu", price: 50, image: "https://images.unsplash.com/photo-1596560548464-f010549b84d7?w=600&q=80", description: "Traditional gram flour laddus with pure ghee and nuts" },
+            { id: 18, name: "Badam Halwa", price: 180, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Luxurious almond fudge with saffron" },
+            { id: 19, name: "Rasmalai", price: 55, image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", description: "Rasgulla soaked in thickened saffron milk with nuts" },
+            { id: 20, name: "Pista Barfi", price: 140, image: "https://images.unsplash.com/photo-1601305722878-9391d3c7b0ae?w=600&q=80", description: "Delicious pistachio fudge with rich green color" },
+            { id: 21, name: "Kheer Kadam", price: 70, image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", description: "Two-layered sweet with a surprise center" },
+            { id: 22, name: "Coconut Barfi", price: 60, image: "https://images.unsplash.com/photo-1601305722878-9391d3c7b0ae?w=600&q=80", description: "Soft coconut fudge made with fresh coconut" },
+            { id: 23, name: "Singori", price: 85, image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd1?w=600&q=80", description: "Kumaoni sweet wrapped in maalu leaves" },
+            { id: 24, name: "Rabri", price: 70, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Thickened sweet milk with layers of malai" },
+            { id: 25, name: "Dry Fruit Halwa", price: 200, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80", description: "Rich semolina halwa loaded with premium nuts" }
+        ];
+
+        // Cart state
+        let cart = [];
+
+        // Initialize quantities
+        products.forEach(p => p.quantity = 1);
+
+        // Render products
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = products.map(product => `
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        <div class="price-badge">₹${product.price}</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="updateQuantity(${product.id}, -1)">−</button>
+                            <span class="qty-value" id="qty-${product.id}">${product.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">
+                            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update quantity
+        function updateQuantity(id, change) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                product.quantity = Math.max(1, Math.min(20, product.quantity + change));
+                document.getElementById(`qty-${id}`).textContent = product.quantity;
+            }
+        }
+
+        // Add to cart
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += product.quantity;
+            } else {
+                cart.push({ ...product, quantity: product.quantity });
+            }
+
+            // Reset product quantity
+            product.quantity = 1;
+            document.getElementById(`qty-${id}`).textContent = 1;
+
+            updateCartUI();
+            
+            // Scroll to cart
+            document.getElementById('cart').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Remove from cart
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        // Update cart UI
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartContent = document.getElementById('cartContent');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            if (totalItems > 0) {
+                cartCount.style.display = 'flex';
+                cartCount.textContent = totalItems;
+            } else {
+                cartCount.style.display = 'none';
+            }
+
+            if (cart.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="cart-empty">
+                        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some delicious sweets to get started!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const grandTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+            cartContent.innerHTML = `
+                ${cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <p>Qty: ${item.quantity} × ₹${item.price}</p>
+                        </div>
+                        <div class="cart-item-total">₹${item.price * item.quantity}</div>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})" title="Remove">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        </button>
+                    </div>
+                `).join('')}
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <h3>Grand Total</h3>
+                        <div class="amount">₹${grandTotal}</div>
+                    </div>
+                    <a href="${generateWhatsAppLink()}" class="whatsapp-btn" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                        Place Order on WhatsApp
+                    </a>
+                </div>
+            `;
+        }
+
+        // Generate WhatsApp order message
+        function generateWhatsAppLink() {
+            if (cart.length === 0) return '#';
+
+            const grandTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            
+            let message = `_*Shree Krishna Sweets*_\n`;
+            message += `*Order Summary:*\n\n`;
+            message += `*Items:*\n`;
+            cart.forEach(item => {
+                message += `• ${item.name} - ${item.quantity} × ₹${item.price} = ₹${item.price * item.quantity}\n`;
+            });
+            message += `\n*Grand Total: ₹${grandTotal}*\n\n`;
+            message += `Please confirm my order. Thank you!`;
+
+            return `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+        }
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            reveals.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', () => {
+            renderProducts();
+            revealOnScroll();
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'linear-gradient(135deg, rgba(128, 0, 32, 0.98), rgba(92, 0, 24, 0.98))';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, rgb(128, 0, 32), rgb(92, 0, 24))';
+            }
+        });
+    </script>
+</body>
+</html>
